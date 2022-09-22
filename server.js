@@ -8,7 +8,6 @@ const { Sequelize } = require('sequelize')
 require('dotenv').config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-// const sequelize = new Sequelize(process.env.PG_URI)
 
 //SEQUELIZE CONNECTION
 const sequelize = new Sequelize({
