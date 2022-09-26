@@ -17,13 +17,17 @@ const sequelize = new Sequelize({
     password: 'Mot9420?'
   })
 
+// CONTROLLERS 
+const bandsController = require('./controllers/bands_controller')
+app.use('/bands', bandsController)
 
-try {
-    sequelize.authenticate()
-    console.log(`Connected with Sequelize at ${process.env.PG_URI}`)
-} catch (err) {
-    console.log(`Unable to connect to PG: ${err}`)
-}
+
+// try {
+//     sequelize.authenticate()
+//     console.log(`Connected with Sequelize at ${process.env.PG_URI}`)
+// } catch (err) {
+//     console.log(`Unable to connect to PG: ${err}`)
+// }
 
 // ROOT
 app.get('/', (req, res) => {

@@ -1,14 +1,23 @@
 {
-    "Servers": {
-        "1": {
-            "Name": "PostgreSQL 14",
-            "Group": "Servers",
-            "Host": "localhost",
-            "Port": 5432,
-            "MaintenanceDB": "postgres",
-            "Username": "postgres",
-            "SSLMode": "prefer",
-            "Comment": "Auto-detected PostgreSQL 14 installation with the data directory at /Library/PostgreSQL/14/data"
-        }
-    }
+  "development": {
+    "username": "postgres",
+    "password": "Mot9420?",
+    "database": "music_tour",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "Mot9420?",
+    "database": "music_tour",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "Mot9420?",
+    "database": "music_tour",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
 }
