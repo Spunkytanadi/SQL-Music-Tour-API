@@ -1,6 +1,6 @@
 // DEPENDENCIES
 const bands = require('express').Router()
-const { where } = require('sequelize')
+const { op } = require('sequelize')
 const db = require('../models')
 const { Band } = db 
 
@@ -8,9 +8,9 @@ const { Band } = db
 bands.get('/', async (req, res) => {
     try {
         const foundBands = await Band.findAll({
-            order: [ [ 'available_start-time', 'ASC' ] ],
+            order: [ [ 'available_start_time', 'ASC' ] ],
             where: {
-                name: { [ op.like]:`%${req.query.name ? req.query.name : ''}%` }
+                name: { [Op.like]: `%${req.query.name ? req.query.name : ''}%` }
             }
         })
         res.status(200).json(foundBands)
@@ -75,7 +75,6 @@ bands.delete('/:id', async (req, res) => {
         res.status(500).json(err)
     }
 })
-
 
 // EXPORT
 module.exports = bands
