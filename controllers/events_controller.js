@@ -19,7 +19,7 @@ events.get('/', async (req, res) => {
 })
 
 // FIND A SPECIFIC EVENT
-events.get('/:id', async (req, res) => {
+events.get('/:name', async (req, res) => {
     try {
         const foundEvent = await Event.findOne({
             where: { event_id: req.params.id }
@@ -44,7 +44,7 @@ events.post('/', async (req, res) => {
 })
 
 // UPDATE AN EVENT
-events.put('/:id', async (req, res) => {
+events.put('/:name', async (req, res) => {
     try {
         const updatedEvents = await Event.update(req.body, {
             where: {
@@ -60,7 +60,7 @@ events.put('/:id', async (req, res) => {
 })
 
 // DELETE AN EVENT
-events.delete('/:id', async (req, res) => {
+events.delete('/:name', async (req, res) => {
     try {
         const deletedEvents = await Event.destroy({
             where: {

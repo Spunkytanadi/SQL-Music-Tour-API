@@ -7,14 +7,14 @@ module.exports = (sequelize, DataTypes) => {
     static associate({ Event, StageEvent, SetTime }) {
       // events 
       Stage.belongsToMany(Event, {
-        foreignKey: "stage_id",
+        foreignKey: "stage_name",
         as: "events",
         through: StageEvent
       })
 
       // set times 
       Stage.hasMany(SetTime, {
-        foreignKey: "stage_id",
+        foreignKey: "stage_name",
         as: "set_times"
       })
     }

@@ -6,13 +6,13 @@ module.exports = (sequelize, DataTypes) => {
     static associate({ Band, Event }) {
       // band
       MeetGreet.belongsTo(Band, {
-        foreignKey: "band_id",
+        foreignKey: "band_name",
         as: "band"
       })
 
       // event
       MeetGreet.belongsTo(Event, {
-        foreignKey: "event_id",
+        foreignKey: "event_name",
         as: "event"
       })
     }
